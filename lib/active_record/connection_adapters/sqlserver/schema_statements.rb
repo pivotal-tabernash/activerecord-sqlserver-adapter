@@ -198,7 +198,7 @@ module ActiveRecord
           results.collect do |ci|
             ci = ci.symbolize_keys
             ci[:type] = case ci[:type]
-                         when /^bit|image|text|ntext|datetime$/
+                         when /^bit|image|text|ntext|datetime|tinyint$/
                            ci[:type]
                          when /^numeric|decimal$/i
                            "#{ci[:type]}(#{ci[:numeric_precision]},#{ci[:numeric_scale]})"
